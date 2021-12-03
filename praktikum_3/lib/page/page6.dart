@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-class Page2 extends StatefulWidget {
+class Page6 extends StatefulWidget {
   @override
-  _Page2 createState() => _Page2();
+  _Page6 createState() => _Page6();
 }
 
-class _Page2 extends State<Page2> {
+class _Page6 extends State<Page6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _Page2 extends State<Page2> {
                   width: 200.0,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('images/baju2.jpg'),
+                      image: AssetImage('images/women2.jpg'),
                       fit: BoxFit.fill,
                     ),
                     shape: BoxShape.circle,
@@ -51,7 +51,7 @@ class _Page2 extends State<Page2> {
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 15)),
                 Text(
-                  "Erigo T-shirt",
+                  "Women-2",
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,

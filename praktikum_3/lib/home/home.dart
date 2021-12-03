@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:praktikum_3/page/page1.dart';
+import 'package:praktikum_3/page/page2.dart';
+import 'package:praktikum_3/page/page3.dart';
+import 'package:praktikum_3/page/page4.dart';
+import 'package:praktikum_3/page/page5.dart';
+import 'package:praktikum_3/page/page6.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -137,7 +143,11 @@ class _Home extends State<Home> {
             children: <Widget>[
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page1(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
@@ -154,7 +164,11 @@ class _Home extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page2(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
@@ -171,7 +185,11 @@ class _Home extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page3(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
@@ -188,7 +206,11 @@ class _Home extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page4(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
@@ -205,7 +227,11 @@ class _Home extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page5(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
@@ -222,7 +248,11 @@ class _Home extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  print("Container clicked");
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Page6(),
+                    ),
+                  );
                 },
                 child: new Container(
                   alignment: Alignment.center,
