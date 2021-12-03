@@ -18,6 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final _focusEmail = FocusNode();
   final _focusPassword = FocusNode();
   bool _isProcessing = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,20 +124,27 @@ class _RegisterPageState extends State<RegisterPage> {
                                     _emailTextController.text.trim();
                                 final String password =
                                     _passwordTextController.text.trim();
-                                setState(() {
-                                  _isProcessing = true;
-                                });
-                                if (_nameTextController.text != null &&
-                                    _emailTextController.text != null &&
-                                    _passwordTextController.text != null) {
-                                  Navigator.of(context).pushAndRemoveUntil(
-                                    MaterialPageRoute(
-                                      builder: (context) => Home(),
-                                    ),
-                                    ModalRoute.withName('/'),
-                                  );
+                                if (_registerFormKey.currentState!.validate()) {
+                                  setState(() {
+                                    _isProcessing = true;
+                                  });
+                                  if (_nameTextController.text != null &&
+                                      _emailTextController.text != null &&
+                                      _passwordTextController.text != null) {
+                                    Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                        builder: (context) => Home(),
+                                      ),
+                                      ModalRoute.withName('/'),
+                                    );
+                                  }
                                 }
                               },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.deepPurple.shade700),
+                              ),
                               child: Text(
                                 'Sign up',
                                 style: TextStyle(color: Colors.white),
@@ -150,18 +158,6 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
       ),
-      /*
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            FlatButton(
-              child: Text('Register'),
-              onPressed: () => doRegister(context),
-            ),
-          ],
-        ),
-      ),
-      */
     );
   }
 
