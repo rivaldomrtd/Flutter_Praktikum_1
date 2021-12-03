@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'loginpage.dart';
+import 'package:praktikum_3/auth/loginpage.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -32,7 +32,7 @@ class RegisterPage extends StatelessWidget {
                 width: 120.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/1.png'),
+                    image: AssetImage('images/1.png'),
                     fit: BoxFit.fill,
                   ),
                   shape: BoxShape.circle,
