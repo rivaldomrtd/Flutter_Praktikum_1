@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:praktikum_3/auth/loginpage.dart';
 import 'package:praktikum_3/page/page1.dart';
 import 'package:praktikum_3/page/page2.dart';
 import 'package:praktikum_3/page/page3.dart';
@@ -13,11 +14,25 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
+  bool _isSigningOut = false;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Log Out',
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(),
+                ),
+              );
+            },
+          ),
+        ],
         backgroundColor: Colors.deepPurple[700],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
