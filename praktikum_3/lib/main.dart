@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum_3/auth/loginpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,61 +7,33 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '1461900135',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            textStyle: TextStyle(
+              fontSize: 24.0,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+            padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+          ),
+        ),
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontSize: 46.0,
+            color: Colors.blue.shade700,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyText1: TextStyle(fontSize: 18.0),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: LoginPage(),
     );
   }
 }
