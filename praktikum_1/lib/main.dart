@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -55,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   height: 250,
                   child: Image.network(
-                      'https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/245067225_1018215898960433_2454503231624300744_n.jpg?_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=CyijdP19DX8AX8ZDHHj&edm=ABfd0MgBAAAA&ccb=7-4&oh=00562ef47521537a558e176058bddf56&oe=619DE0EC&_nc_sid=7bff83'),
+                      'https://avatars.githubusercontent.com/u/63405585?v=4'),
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 30)),
                 Text(
