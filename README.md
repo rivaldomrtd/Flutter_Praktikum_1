@@ -8,3 +8,5 @@
 # praktikum_1
 # praktikum_2
 # praktikum_3
+
+contac: rivaldomrtd@gmail.com
