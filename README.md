@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Vald00s" target="_blank"><img src="https://avatars.githubusercontent.com/u/93493489?s=200&v=4" width="400"></a></p>
+<p align="center"><a href="https://github.com/Vald00s" target="_blank"><img src="https://avatars.githubusercontent.com/u/93493489?s=200&v=4" width="200"></a></p>
 
 # praktikum_1
 
