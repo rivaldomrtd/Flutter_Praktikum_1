@@ -4,31 +4,28 @@ import 'package:http/http.dart' as http;
 
 class Product {
 // persiapan data yang akan di ambil
-  int id;
-  String title;
-  String imgUrl;
-  String category;
-  String price;
+  String idCategory;
+  String strCategoryThumb;
+  String strCategory;
+  String strCategoryDescription;
   Product({
-    required this.id,
-    required this.title,
-    required this.imgUrl,
-    required this.category,
-    required this.price,
+    required this.idCategory,
+    required this.strCategoryThumb,
+    required this.strCategory,
+    required this.strCategoryDescription,
   });
 
 // fungsi factory untuk mengambil data json tiap product
   factory Product.fromJson(Map<String, dynamic> object) {
     return Product(
-      id: object["id"],
-      title: object["title"],
-      imgUrl: object["image"],
-      category: object["category"],
-      price: object["price"].toString(),
+      idCategory: object["idCategory"],
+      strCategoryThumb: object["strCategoryThumb"],
+      strCategory: object["strCategory"],
+      strCategoryDescription: object["strCategoryDescription"],
     );
   }
   static Future<List<Product>> connectToApi() async {
-    String apiUrl = "https://fakestoreapi.com/products";
+    String apiUrl = "https://www.themealdb.com/api/json/v1/1/categories.php";
     List<Product> product = [];
 // mendapatkan result data setelah koenksi get metohod
     var apiResult = await http.get(
@@ -36,9 +33,10 @@ class Product {
     );
 // mendecode hasi dari method get
     var jsonObject = json.decode(apiResult.body);
+    var Data = (jsonObject as Map<String, dynamic>)['categories'];
 // menambahkan data ke list product
-    for (var i = 0; i < jsonObject.length; i++) {
-      product.add(Product.fromJson(jsonObject[i]));
+    for (var i = 0; i < Data.length; i++) {
+      product.add(Product.fromJson(Data[i]));
     }
 // mengembalikan listProdut
     return product;
