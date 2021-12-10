@@ -5,19 +5,19 @@ class Product {
   int id;
   String title;
   String thumbnail;
-  String short_description;
+  String genre;
   Product({
     required this.id,
     required this.title,
     required this.thumbnail,
-    required this.short_description,
+    required this.genre,
   });
   factory Product.fromJson(Map<String, dynamic> object) {
     return Product(
       id: object["id"],
       title: object["title"],
       thumbnail: object["thumbnail"],
-      short_description: object["short_description"],
+      genre: object["genre"],
     );
   }
   static Future<List<Product>> connectToApi() async {

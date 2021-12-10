@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktikum_4/product/product_model.dart';
+import 'package:praktikum4/product/product_model.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({Key? key}) : super(key: key);
@@ -17,7 +17,26 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("VALDOOS"),
+        backgroundColor: Colors.deepPurple[700],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(padding: EdgeInsets.only(left: 100)),
+            Container(
+              height: 32.0,
+              width: 32.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/logo.png'),
+                  fit: BoxFit.fill,
+                ),
+                shape: BoxShape.circle,
+              ),
+            ),
+            Container(
+                padding: const EdgeInsets.all(8.0), child: Text('VALDOOS-GAME'))
+          ],
+        ),
       ),
       body: FutureBuilder(
         future: _getProduct(),
@@ -32,23 +51,24 @@ class _ProductScreenState extends State<ProductScreen> {
               return (snapshot.hasError)
                   ? Text('Error: ${snapshot.error}')
                   : ListView.builder(
-                      itemCount: listProduct.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          child: ListTile(
-                            leading: Image.network(
-                              listProduct[index].thumbnail,
-                              width: 50,
-                              fit: BoxFit.fill,
+                      itemExtent: 100,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.all(12.0),
+                            child: ListTile(
+                              leading: Image.network(
+                                listProduct[index].thumbnail,
+                                width: 100,
+                                fit: BoxFit.cover,
+                              ),
+                              title: Text(listProduct[index].title),
+                              subtitle: Text(listProduct[index].genre),
+                              isThreeLine: true,
                             ),
-                            title: Text(listProduct[index].title),
-                            subtitle:
-                                Text(listProduct[index].short_description),
-                            isThreeLine: true,
                           ),
-                        );
-                      },
-                    );
+                      itemCount: listProduct.length);
           }
         },
       ),
