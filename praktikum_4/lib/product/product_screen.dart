@@ -37,13 +37,13 @@ class _ProductScreenState extends State<ProductScreen> {
                         return Card(
                           child: ListTile(
                             leading: Image.network(
-                              listProduct[index].strCategoryThumb,
+                              listProduct[index].thumbnail,
                               width: 50,
                               fit: BoxFit.fill,
                             ),
-                            title: Text(listProduct[index].strCategory),
+                            title: Text(listProduct[index].title),
                             subtitle:
-                                Text(listProduct[index].strCategoryDescription),
+                                Text(listProduct[index].short_description),
                             isThreeLine: true,
                           ),
                         );
