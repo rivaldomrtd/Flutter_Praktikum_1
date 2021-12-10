@@ -45,7 +45,7 @@ flutter_native_splash:
   ios: true
   web: true
 
-  # color: "#4341B6"
+  color: "#4341B6"
   # backround_image: "assets/images/backround.png"
   image: assets/images/logo.png
 
