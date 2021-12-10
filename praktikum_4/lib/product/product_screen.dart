@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktikum4/product/product_model.dart';
+import 'package:praktikum_4/product/product_model.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({Key? key}) : super(key: key);
